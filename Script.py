@@ -1,12 +1,17 @@
 import Constants
 import selenium
-from selenium import webdriver
+from selenium import webdriver 
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import time
 
+
+#sets some browser options
+options = webdriver.ChromeOptions()
+options.add_argument("--headless=new")
+
 #gets browser and opens website
-browser = webdriver.Chrome(ChromeDriverManager().install())
+browser = webdriver.Chrome(ChromeDriverManager().install(), options = options)
 browser.get(Constants.WEBSITEURL)
 
 # gets through the login page
@@ -35,5 +40,6 @@ time.sleep(1)
 confirmButton = browser.find_element(By.XPATH, "/html/body/div[1]/div/div/div[3]/div[1]/div[2]/div/div/div[2]/div[1]/table/tbody/tr/td[5]/button[1]")
 confirmButton.click()
 
+print ("IP Renewed!")
 browser.close()
 
