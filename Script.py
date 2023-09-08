@@ -5,6 +5,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import time
 
+# Using Selenium 4.9.0
+# Using Webdriver_manager 4.0.0
+
 
 #sets some browser options
 options = webdriver.ChromeOptions()
